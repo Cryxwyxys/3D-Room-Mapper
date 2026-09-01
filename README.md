@@ -1,4 +1,5 @@
-# 3D-Room-MapperThe repository aims to build a device that can map a room from a single position using a rotating LiDAR sensor and a Raspberry Pi.
+# 3D-Room-Mapper
+The repository aims to build a device that can map a room from a single position using a rotating LiDAR sensor and a Raspberry Pi.
 
 The idea is to take an RPLiDAR A1, which can scan a 2D plane on its own, and use a stepper motor to rotate it. The 2D points are then converted into 3D points by the Raspberry Pi using the rotation of the stepper motor and basic trigonometry.
 
