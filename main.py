@@ -6,24 +6,19 @@ from time import sleep
 import laspy
 import numpy as np
  
-
 BAUD_RATE: int = 115200
 TIMEOUT: int = 1
 
 DEVICE_PATH: str = "/dev/ttyUSB0"
  
-D_MAX: int = 6000
-I_MIN: int = 0
-I_MAX: int = 50
-scans = []
-
 global motorAngle
 global motorRotation
+
 motorAngle = 0
 motorRotation = 1.8
 hdr = laspy.LasHeader(version="1.2", point_format=0)
  
- 
+
 def verify_device() -> bool:
     if path.exists(DEVICE_PATH):
         return True
@@ -58,7 +53,7 @@ if __name__ == '__main__':
 
     try:
         validPoints = []
-        numOfScans = int(360 / motorRotation / 10)
+        numOfScans = int(360 / motorRotation)
         for i in range(numOfScans):
 
             iterator = lidar.iter_measures(max_buf_meas=5000)
