@@ -56,7 +56,7 @@ if __name__ == '__main__':
         numOfScans = int(360 / motorRotation)
         for i in range(numOfScans):
 
-            iterator = lidar.iter_measures(max_buf_meas=5000)
+            iterator = lidar.iter_measures(max_buf_meas=10000)
             scans = []
 
             for j in range(500):
@@ -87,3 +87,6 @@ if __name__ == '__main__':
     finally:    
         saveStuff(validPoints)
         print("done")
+        lidar.stop()
+        lidar.stop_motor()
+        lidar.disconnect()
